@@ -1,10 +1,10 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AlertController, IonList, IonRouterOutlet, LoadingController, ModalController, ToastController, Config } from '@ionic/angular';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {Router} from '@angular/router';
+import {AlertController, Config, IonList, IonRouterOutlet, LoadingController, ModalController, ToastController} from '@ionic/angular';
 
-import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
-import { ConferenceData } from '../../providers/conference-data';
-import { UserData } from '../../providers/user-data';
+import {ScheduleFilterPage} from '../schedule-filter/schedule-filter';
+import {ConferenceData} from '../../providers/conference-data';
+import {UserData} from '../../providers/user-data';
 
 @Component({
   selector: 'page-schedule',
@@ -13,7 +13,7 @@ import { UserData } from '../../providers/user-data';
 })
 export class SchedulePage implements OnInit {
   // Gets a reference to the list element
-  @ViewChild('scheduleList', { static: true }) scheduleList: IonList;
+  @ViewChild('scheduleList', {static: true}) scheduleList: IonList;
 
   ios: boolean;
   dayIndex = 0;
@@ -59,8 +59,10 @@ export class SchedulePage implements OnInit {
     const modal = await this.modalCtrl.create({
       component: ScheduleFilterPage,
       swipeToClose: true,
-      presentingElement: this.routerOutlet.nativeEl,
-      componentProps: { excludedTracks: this.excludeTracks }
+      /*presentingElement: this.routerOutlet.nativeEl,*/
+      componentProps: {excludedTracks: this.excludeTracks},
+      breakpoints: [0.8, 1],
+      initialBreakpoint: 0.8,
     });
     await modal.present();
 
