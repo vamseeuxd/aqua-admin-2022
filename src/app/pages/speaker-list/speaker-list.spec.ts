@@ -5,7 +5,7 @@ import {ActionSheetController} from '@ionic/angular';
 
 import {InAppBrowser} from '@ionic-native/in-app-browser/ngx';
 import {SpeakerListPage} from './speaker-list';
-import {ConferenceData} from '../../../providers/conference-data';
+import {ConferenceData} from '../../providers/conference-data';
 
 const confDataSub = {};
 
@@ -33,7 +33,7 @@ describe('SpeakerListPage', () => {
     fixture = TestBed.createComponent(SpeakerListPage);
     app = fixture.debugElement.componentInstance;
   });
-  it('should create the speakers list page', () => {
+  it('should create the speaker list page', () => {
     expect(app).toBeTruthy();
   });
 });

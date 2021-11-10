@@ -27,15 +27,15 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../speakers/speaker-list/speaker-list.module').then(m => m.SpeakerListModule)
+            loadChildren: () => import('../speaker-list/speaker-list.module').then(m => m.SpeakerListModule)
           },
           {
             path: 'session/:sessionId',
             loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
           },
           {
-            path: 'speakers-details/:speakerId',
-            loadChildren: () => import('../speakers/speaker-detail/speaker-detail.module').then(m => m.SpeakerDetailModule)
+            path: 'speaker-details/:speakerId',
+            loadChildren: () => import('../speaker-detail/speaker-detail.module').then(m => m.SpeakerDetailModule)
           }
         ]
       },

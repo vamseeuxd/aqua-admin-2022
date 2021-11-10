@@ -15,4 +15,5 @@ import {IonicModule} from '@ionic/angular';
     SpeakerDetailPage,
   ]
 })
-export class SpeakerDetailModule { }
+export class SpeakerDetailModule {
+}
