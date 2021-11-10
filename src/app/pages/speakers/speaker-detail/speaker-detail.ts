@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {ConferenceData} from '../../providers/conference-data';
+import {ConferenceData} from '../../../providers/conference-data';
 import {ActionSheetController} from '@ionic/angular';
 import {InAppBrowser} from '@ionic-native/in-app-browser/ngx';
 

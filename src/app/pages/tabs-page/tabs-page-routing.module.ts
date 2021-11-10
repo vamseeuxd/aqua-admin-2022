@@ -27,7 +27,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../speaker-list/speaker-list.module').then(m => m.SpeakerListModule)
+            loadChildren: () => import('../speakers/speaker-list/speaker-list.module').then(m => m.SpeakerListModule)
           },
           {
             path: 'session/:sessionId',
@@ -35,7 +35,7 @@ const routes: Routes = [
           },
           {
             path: 'speaker-details/:speakerId',
-            loadChildren: () => import('../speaker-detail/speaker-detail.module').then(m => m.SpeakerDetailModule)
+            loadChildren: () => import('../speakers/speaker-detail/speaker-detail.module').then(m => m.SpeakerDetailModule)
           }
         ]
       },
