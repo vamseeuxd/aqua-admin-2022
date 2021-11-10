@@ -1,11 +1,11 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { Router } from '@angular/router';
-import { TestBed, waitForAsync } from '@angular/core/testing';
-import { ActionSheetController } from '@ionic/angular';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {Router} from '@angular/router';
+import {TestBed, waitForAsync} from '@angular/core/testing';
+import {ActionSheetController} from '@ionic/angular';
 
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
-import { SpeakerListPage } from './speaker-list';
-import { ConferenceData } from '../../providers/conference-data';
+import {InAppBrowser} from '@ionic-native/in-app-browser/ngx';
+import {SpeakerListPage} from './speaker-list';
+import {ConferenceData} from '../../../providers/conference-data';
 
 const confDataSub = {};
 
@@ -33,7 +33,7 @@ describe('SpeakerListPage', () => {
     fixture = TestBed.createComponent(SpeakerListPage);
     app = fixture.debugElement.componentInstance;
   });
-  it('should create the speaker list page', () => {
+  it('should create the speakers list page', () => {
     expect(app).toBeTruthy();
   });
 });
