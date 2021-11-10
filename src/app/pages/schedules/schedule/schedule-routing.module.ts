@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-import { SchedulePage } from './schedule';
+import {SchedulePage} from './schedule';
 
 const routes: Routes = [
   {

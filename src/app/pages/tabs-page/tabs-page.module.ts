@@ -7,8 +7,8 @@ import {TabsPageRoutingModule} from './tabs-page-routing.module';
 
 import {AboutModule} from '../about/about.module';
 import {MapModule} from '../map/map.module';
-import {ScheduleModule} from '../schedule/schedule.module';
-import {SessionDetailModule} from '../session-detail/session-detail.module';
+import {ScheduleModule} from '../schedules/schedule/schedule.module';
+import {SessionDetailModule} from '../schedules/session-detail/session-detail.module';
 import {SpeakerDetailModule} from '../speakers/speaker-detail/speaker-detail.module';
 import {SpeakerListModule} from '../speakers/speaker-list/speaker-list.module';
 

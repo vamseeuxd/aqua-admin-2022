@@ -3,8 +3,8 @@ import {Router} from '@angular/router';
 import {AlertController, Config, IonList, IonRouterOutlet, LoadingController, ModalController, ToastController} from '@ionic/angular';
 
 import {ScheduleFilterPage} from '../schedule-filter/schedule-filter';
-import {ConferenceData} from '../../providers/conference-data';
-import {UserData} from '../../providers/user-data';
+import {ConferenceData} from '../../../providers/conference-data';
+import {UserData} from '../../../providers/user-data';
 
 @Component({
   selector: 'page-schedule',
@@ -76,13 +76,13 @@ export class SchedulePage implements OnInit {
   async addFavorite(slidingItem: HTMLIonItemSlidingElement, sessionData: any) {
     if (this.user.hasFavorite(sessionData.name)) {
       // Prompt to remove favorite
-      this.removeFavorite(slidingItem, sessionData, 'Favorite already added');
+      await this.removeFavorite(slidingItem, sessionData, 'Favorite already added');
     } else {
       // Add as a favorite
       this.user.addFavorite(sessionData.name);
 
       // Close the open item
-      slidingItem.close();
+      await slidingItem.close();
 
       // Create a toast
       const toast = await this.toastCtrl.create({
@@ -137,6 +137,6 @@ export class SchedulePage implements OnInit {
     });
     await loading.present();
     await loading.onWillDismiss();
-    fab.close();
+    await fab.close();
   }
 }

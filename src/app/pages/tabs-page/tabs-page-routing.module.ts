@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {TabsPage} from './tabs-page';
-import {SchedulePage} from '../schedule/schedule';
+import {SchedulePage} from '../schedules/schedule/schedule';
 
 
 const routes: Routes = [
@@ -18,7 +18,7 @@ const routes: Routes = [
           },
           {
             path: 'session/:sessionId',
-            loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
+            loadChildren: () => import('../schedules/session-detail/session-detail.module').then(m => m.SessionDetailModule)
           }
         ]
       },
@@ -31,7 +31,7 @@ const routes: Routes = [
           },
           {
             path: 'session/:sessionId',
-            loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
+            loadChildren: () => import('../schedules/session-detail/session-detail.module').then(m => m.SessionDetailModule)
           },
           {
             path: 'speaker-details/:speakerId',
