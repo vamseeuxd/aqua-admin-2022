@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "ionic-ng-conf-app"
+    "default": "aqua-admins"
+  },
+  "targets": {
+    "aqua-admins": {
+      "hosting": {
+        "app": [
+          "aqua-admins"
+        ]
+      }
+    }
   }
 }

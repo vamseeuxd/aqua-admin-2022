@@ -40,6 +40,23 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'projects',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../projects/project-list/project-list.module').then(m => m.ProjectListModule)
+          },
+          {
+            path: 'session/:sessionId',
+            loadChildren: () => import('../schedules/session-detail/session-detail.module').then(m => m.SessionDetailModule)
+          },
+          {
+            path: 'project-details/:speakerId',
+            loadChildren: () => import('../projects/project-detail/project-detail.module').then(m => m.ProjectDetailModule)
+          }
+        ]
+      },
+      {
         path: 'map',
         children: [
           {
@@ -70,5 +87,6 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule { }
+export class TabsPageRoutingModule {
+}
 

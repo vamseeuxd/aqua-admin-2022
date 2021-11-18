@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Projects</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="addNewProject()" color="primary">Add Project</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col *ngFor="let project of projects;" size="12" size-md="6">
+        <ion-card class="project-card">
+          <ion-card-header>
+            <ion-item class="project-item" detail="false" lines="none"
+                      routerLink="/app/tabs/projects/project-details/{{project.id}}">
+              <ion-avatar slot="start">
+                <!--<img [src]="project.profilePic" [alt]="project.name + ' profile picture'">-->
+                <ngx-avatar [name]="project.name"></ngx-avatar>
+              </ion-avatar>
+              <ion-label>
+                <h2>{{project.name}}</h2>
+                <p>{{project.title}}</p>
+              </ion-label>
+            </ion-item>
+          </ion-card-header>
+
+          <ion-card-content *ngIf="false">
+            <ion-list lines="none">
+              <ion-item *ngFor="let session of project.sessions" detail="false"
+                        routerLink="/app/tabs/projects/session/{{session.id}}">
+                <ion-label>
+                  <h3>{{session.name}}</h3>
+                </ion-label>
+              </ion-item>
+
+              <ion-item detail="false" routerLink="/app/tabs/projects/project-details/{{project.id}}">
+                <ion-label>
+                  <h3>About {{project.name}}</h3>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!--<ion-fab slot="fixed" vertical="bottom" horizontal="end" #fab>
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>-->
+</ion-content>

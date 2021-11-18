@@ -1,0 +1,45 @@
+<ion-content class="project-detail">
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/app/tabs/projects"></ion-back-button>
+      </ion-buttons>
+      <ion-buttons *ngIf="project" slot="end">
+        <ion-button (click)="openContact(project)">
+          <ion-icon ios="call-outline" md="call-sharp" slot="icon-only"></ion-icon>
+        </ion-button>
+        <ion-button (click)="openSpeakerShare(project)">
+          <ion-icon ios="share-outline" md="share-sharp" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="project-background">
+    <!--<img [src]="project?.profilePic" [alt]="project?.name">-->
+    <ngx-avatar #avatarText [name]="project?.name"></ngx-avatar>
+    <h2 (click)="logMe(avatarText)" [style.color]="avatarText.avatarStyle.backgroundColor"
+        style="font-weight: bold;text-shadow: 1px 1px #000000;">{{project?.name}}</h2>
+  </div>
+
+  <div class="ion-padding project-detail">
+    <p>{{project?.about}} Say hello on social media!</p>
+
+    <hr>
+
+    <ion-chip (click)="openExternalUrl('https://twitter.com/' + project.twitter)" button color="twitter">
+      <ion-icon name="logo-twitter"></ion-icon>
+      <ion-label>Twitter</ion-label>
+    </ion-chip>
+
+    <ion-chip (click)="openExternalUrl('https://github.com/ionic-team/ionic')" button color="dark">
+      <ion-icon name="logo-github"></ion-icon>
+      <ion-label>GitHub</ion-label>
+    </ion-chip>
+
+    <ion-chip (click)="openExternalUrl('https://instagram.com/ionicframework')" button color="instagram">
+      <ion-icon name="logo-instagram"></ion-icon>
+      <ion-label>Instagram</ion-label>
+    </ion-chip>
+  </div>
+</ion-content>
