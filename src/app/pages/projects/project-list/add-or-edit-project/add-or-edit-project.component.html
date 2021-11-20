@@ -35,30 +35,19 @@
       <ion-label position="floating">Postal Code</ion-label>
       <ion-input name="postalCode" ngModel></ion-input>
     </ion-item>
+    <input [ngModel]="'vamsi.flex@gmail.com'" name="email" type="hidden">
   </form>
   <!--<pre>{{projectForm.value|json}}</pre>-->
-  <div>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-button (click)="saveProject()" style="width: 100%;">Save</ion-button>
-        </ion-col>
-        <ion-col>
-          <ion-button (click)="dismiss()" color="dark" style="width: 100%;">Cancel</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
 
 </ion-content>
 
-<!--<ion-footer>
+<ion-footer>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button style="width: 100%;">Save</ion-button>
+      <ion-button (click)="saveProject(projectForm)" style="width: 100%;">Save</ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button (click)="dismiss()" color="dark" style="width: 100%;">Cancel</ion-button>
     </ion-buttons>
   </ion-toolbar>
-</ion-footer>-->
+</ion-footer>

@@ -12,47 +12,33 @@
 
 <ion-content fullscreen="true">
   <ion-grid fixed>
-    <ion-row>
-      <ion-col *ngFor="let project of projects;" size="12" size-md="6">
+    <ion-row *ngIf="projectList$ | async as projectList">
+      <ion-col *ngFor="let project of projectList;" size="12" size-md="6">
         <ion-card class="project-card">
           <ion-card-header>
-            <ion-item class="project-item" detail="false" lines="none"
-                      routerLink="/app/tabs/projects/project-details/{{project.id}}">
-              <ion-avatar slot="start">
-                <!--<img [src]="project.profilePic" [alt]="project.name + ' profile picture'">-->
-                <ngx-avatar [name]="project.name"></ngx-avatar>
-              </ion-avatar>
-              <ion-label>
-                <h2>{{project.name}}</h2>
-                <p>{{project.title}}</p>
-              </ion-label>
-            </ion-item>
+            <ion-item-sliding>
+              <ion-item-options side="start">
+                <ion-item-option (click)="editProject(project)" style="width: 60px">Edit</ion-item-option>
+                <ion-item-option (click)="deleteProject(project.id)" color="danger" style="width: 60px">Delete
+                </ion-item-option>
+              </ion-item-options>
+
+              <ion-item class="project-item" detail="false" lines="none"
+                        routerLink="/app/tabs/projects/project-details/{{project.id}}">
+                <!--<ion-avatar slot="start">
+                  <ngx-avatar [name]="project.name"></ngx-avatar>
+                </ion-avatar>-->
+                <ion-label>
+                  <h2>{{project.name}}</h2>
+                  <h5>{{project.addressLine}} | {{project.city}}</h5>
+                  <h5>{{project.state}} | {{project.district}}</h5>
+                  <h5>{{project.country}} | {{project.postalCode}}</h5>
+                </ion-label>
+              </ion-item>
+            </ion-item-sliding>
           </ion-card-header>
-
-          <ion-card-content *ngIf="false">
-            <ion-list lines="none">
-              <ion-item *ngFor="let session of project.sessions" detail="false"
-                        routerLink="/app/tabs/projects/session/{{session.id}}">
-                <ion-label>
-                  <h3>{{session.name}}</h3>
-                </ion-label>
-              </ion-item>
-
-              <ion-item detail="false" routerLink="/app/tabs/projects/project-details/{{project.id}}">
-                <ion-label>
-                  <h3>About {{project.name}}</h3>
-                </ion-label>
-              </ion-item>
-            </ion-list>
-          </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
-
-  <!--<ion-fab slot="fixed" vertical="bottom" horizontal="end" #fab>
-    <ion-fab-button>
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>-->
 </ion-content>
